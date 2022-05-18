@@ -25,7 +25,7 @@ const userModel = connection.define(
             },
 
             get() {
-                return this.getDataValue("location") + " hello";
+                return this.getDataValue("location") + " hello"
             },
         },
     }, {
