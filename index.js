@@ -1,36 +1,8 @@
-import {
-    DataTypes
-} from "sequelize";
-import connection from "./index.js";
+console.log("hello from node js")
+console.log(2 == 4)
 
-const userModel = connection.define(
-    "users", {
-        id: {
-            type: DataTypes.INTEGER,
-            primaryKey: true,
-            allowNull: false,
-            autoIncrement: true,
-        },
-        username: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
+function add(a, b) {
+    return a + b
+}
 
-        location: {
-            type: DataTypes.STRING,
-            allowNull: false,
-
-            set(value) {
-                this.setDataValue("location", value + ",Nepal");
-            },
-
-            get() {
-                return this.getDataValue("location") + " hello"
-            },
-        },
-    }, {
-        timestamps: false,
-    }
-);
-
-export default userModel;
+console.log(add(1, 4))
