@@ -28,10 +28,10 @@ console.log(process.USER)
 
 setInterval(() => console.log("hello"), 1000)
 
-
+    ..
 
 console.log(__filename)
 
 console.log(__dirname)
 
-require("app.js")
+const add = require("./app")
