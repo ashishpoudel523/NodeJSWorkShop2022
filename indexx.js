@@ -15,7 +15,7 @@ center >
 
     }
 
-
+mongo.exe mongodb://$[hostlist]/$[database]?authSource=$[authSource] --username $[username]
 
 function App() {
     return {
