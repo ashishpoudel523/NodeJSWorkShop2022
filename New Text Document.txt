@@ -1,6 +1,6 @@
 ### Node js Syllabus : [Click here](https://bit.ly/ek_node_js_syllabus)
 
-### Pre-requists before learning Nodejs:
+### Pre-requists before learning Nodejs: .
 
     One must be familier with JavaScript Programming Language. ( JavaScript Crash Course : Video 1 , Video 2. )
     One must Understand the following Concepts of JavaScript :
