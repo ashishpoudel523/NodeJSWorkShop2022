@@ -33,3 +33,7 @@ app.get("/", (req, res) => {
 app.use((req, res) => {
     res.render("Page not found")
 })
+
+
+
+It is called server side rendering
