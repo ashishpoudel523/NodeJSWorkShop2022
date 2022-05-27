@@ -7,5 +7,16 @@
 
 
 app.get {
+    Response.render() => {
+        EJS
+    }
+}
 
+app.get("/services"), (req, res) => {
+    res.render("services", ) {
+        title: "Our Services",
+        services: "Web Desiginig",
+        "SEO",
+        "Data Science"
+    }
 }
