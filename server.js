@@ -34,6 +34,21 @@ app.use((req, res) => {
     res.render("Page not found")
 })
 
+app.get("/api", apiRoute)
+
+It is called server side rendering(SSR)
+vs
+Client Side Rendering
 
 
-It is called server side rendering
+Monolothic Architecture
+
+It is built as one large syatem and is usually one code base.
+
+It is not easy to scale based on demand.
+
+It has shared database.Architecture
+Large code base makes IDE slow and build time gets increase.Architecture
+It exteremely diffcilt to chanfe technology or language or frameware beaciuse everything is lightly coupled and depend.
+
+Microservices Architecture
