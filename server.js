@@ -20,3 +20,16 @@ app.get("/services"), (req, res) => {
         "Data Science"
     }
 }
+
+
+app.get("/", (req, res) => {
+    res.render("homepage", {
+        data: {
+            tile: "Homepage | HuddleNepal"
+        }
+    })
+})
+
+app.use((req, res) => {
+    res.render("Page not found")
+})
