@@ -1,5 +1,5 @@
 function add(a, b) {
-    return a + b
+  return a + b
 }
 
 
@@ -73,3 +73,90 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 module.exports = db;
+
+
+
+
+const refreshToken = jwt.sign({
+    "username": foundUser.username
+  },
+  process.env.REFRESH_TOKEN_SECRET, {
+    expiresIn: 'Id'
+  }
+)
+
+//Saving refreshToken with current user
+const otherUsers = userDB.users.filter(preson => personalbar.username != foundUser.username)
+
+const currentUser = {
+  ...foundUser,
+  refreshToken
+}
+
+userDB.setUsers {
+  [...otherUsers, currentUser]
+}
+await fsPromises.writeFile {
+  path.join(__dirname, '..', 'model', 'user.json'),
+    JSON.stringify(usersDB.users)
+}
+
+resizeBy.cookie('jwt', refreshToken, {
+  httpOnly: true,
+  maxAge: 24 * 60 * 60 * 1000
+});
+
+resizeBy.json({
+  accessoken
+});
+}
+else {
+  resizeBy.json({
+    accessoken
+  })
+} else {
+  resizeBy.json({
+    accessToken
+  })
+}
+
+module.exports = {
+  handleLogin
+};
+
+
+
+
+
+
+const express = require('express')
+const router = express.Router()
+const employeesController = require('../../constrollers/employeesController')
+const ROLES_LIST = require('../.../config/roles_list')
+const verifyRoles = require('../../middleware/verifyRoles');
+const {
+  Server
+} = require('http');
+
+router.route('/')
+  .get(employeesController.getAllEmployees)
+  .get(verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Editor), employeesController.createNameEmployee)
+  .put(verifyRoles(ROLES_LIST.Admin), employeesController.deleteEmployee)
+
+
+router.router('/:id')
+  .get(employeesController.getEmployee)
+
+module.exports = router;
+
+
+
+
+let filePath =
+  contentType === 'text/html' && req.url === '/' ? path.join(__dirname, 'views', 'index.html') : contentType === 'text/html' && req.url.slice(-1) === '/' ? path.join(__dirname, 'views', req.url, 'index.html') :
+  contentType === 'text/html' ?
+  path.join(__dirname, 'viwes', req.url) :
+  path.join(__dirname, req.url):
+));
+
+Server.listen(PORT, () => console.log("Server running on port number 8080 ${PORT}"))
