@@ -254,6 +254,7 @@ Server.listen(PORT, {} => console.log(`Server running on port ${PORT}`))
   "license": "ISC",
   "dependencies": {
     "date-fns": "^2.23.0",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.12"
