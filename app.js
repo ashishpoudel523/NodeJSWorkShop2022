@@ -160,3 +160,102 @@ let filePath =
 ));
 
 Server.listen(PORT, () => console.log("Server running on port number 8080 ${PORT}"))
+
+if (fileExists) {
+  //write some code here
+} else {
+  switch (path.parse(filePath).base) {
+    case 'old-page.html':
+      res.writeHead(301, {
+        'Location': '/new-page.html'
+      })
+      res.end()
+      break
+    case 'www-page.html':
+      res.writeHead(301, {
+        'Location': '/'
+      })
+      res.end()
+      break
+    default;
+  }
+}
+
+
+const path = require('path')
+const PORT = process.env.PORT || 3500;
+
+app.get('^/$|/index(.html)?', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views', `index.html`))
+})
+
+app.get(`/new-page(.html)?`, (req, res) => {
+  res.sendFile(path.join(__dirname, 'views', 'new-page.html'))
+})
+
+app.get('/old-page(.html)?', (req, res) => {
+  res.redirect(301, '/new-page.html')
+})
+
+
+
+const whiteList = ['https://www.youtube.com', 'http://127.0.0.1:5500', 'http://localhost:3500']
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (whiteList.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    },
+    optionSuccessStatus: 200
+  }
+  app.use(cors(corsOptions))
+}
+
+
+let filePath =
+  contentType === 'text/html' && req.url === '/' ?
+  path.join(__dirname, 'views', 'index.html') :
+  contentType === 'text/html' && req.url.slice(-1) === '/' ?
+  path.join(__dirname, 'views', req.url) :
+  path.join(_dirname, req.url)
+
+
+//makes .html extension not required in the browser
+
+if (!extension && req.url.slice(-1) !== '/') filePath += '.html'
+
+const fileExists = fs.existsSync(filePath)
+
+if (fileExists) {
+  //serve the file
+} else {
+  //404
+  //301 redirect
+}
+
+}
+}
+
+Server.listen(PORT, {} => console.log(`Server running on port ${PORT}`))
+
+
+
+{
+  "name": "0Stut",
+  "version": "1.0.0",
+  "description": "NodeJS Web Server Tutorial",
+  "main": "server.js",
+  "scripts" {
+    "start": "node server",
+    "dev": "nodemon server"
+  },
+  "author": "Ashish Poudel",
+  "license": "ISC",
+  "dependencies": {
+    "date-fns": "^2.23.0",
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
