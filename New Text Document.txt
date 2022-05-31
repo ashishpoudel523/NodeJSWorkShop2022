@@ -11,6 +11,6 @@
     => Higher Order Functions such as forEach,map,filter,reduce (https://youtu.be/5MCXFmAkP7s)
     =>Asynchronous Operation in JavaScript (https://youtu.be/xgau66ctvMQ)
     => Asynchronous JS Part 2 (callback, promises, async await ) (https://youtu.be/ZhSuj4SFPI8)
-    => ES6 Modules (https://youtu.be/2jcr7pGHcFo)
+    => ES6 Modules (https://youtu.be/2jcr7pGHcFo) 
 
     One must have idea of frontend JavaScript Framework such as React, Vue or Angular. (Optional, but will be good for the course). React Full Playlist : Click here
