@@ -11,7 +11,7 @@ console.log(add(1, 4))
 
 
 
-//global variable 
+//global variable //
 global.companyName = "Ashish"
 
 console.log(companyName)
